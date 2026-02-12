@@ -4,7 +4,9 @@ import TaskManager from './features/tasks/TaskManager'
 function App() {
   return (
     <>
-      <TaskManager />
+      <div className='flex flex-nowrap justify-center mt-10'>
+        <TaskManager />
+      </div>
     </>
   )
 }

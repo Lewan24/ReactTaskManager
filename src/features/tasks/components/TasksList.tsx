@@ -37,15 +37,15 @@ function TasksList({tasks, onTaskDone, onTaskToggle} : TasksListProp){
 
     return (
         <>
-        <fieldset>
-            <legend><h3>Tasks List</h3></legend>
+        <div className="max-w-120">
+            <h1 className="text-center text-2xl my-5">Tasks List</h1>
 
-            <TasksFormFilters onFilterChange={setFilter} />
+            <TasksFormFilters currentFilter={filter} onFilterChange={setFilter} />
 
-            <div className="tasksList mt-2">
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
                 {tasksList}
             </div>
-        </fieldset>
+        </div>
         </>
     )
 }

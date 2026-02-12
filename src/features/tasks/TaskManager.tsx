@@ -2,7 +2,6 @@ import { useCallback, useState } from "react"
 import TasksCreateForm from "./components/TasksCreateForm"
 import TasksList from "./components/TasksList"
 import TasksSummary from "./components/TasksSummary"
-import "./TaskManager.css"
 import type { Task } from "./data/Task"
 
 function TaskManager(){
@@ -26,15 +25,15 @@ function TaskManager(){
 
     return(
         <>
-            <fieldset className="tasksCard cardPadding">
-                <legend className="text-start"><h2>Task Manager</h2></legend>
+            <div className="p-4 shadow-md shadow-white">
+                <h2 className="text-3xl text-center mb-5">Task Manager</h2>
 
                 <TasksCreateForm onTaskCreate={createTask} />
 
                 <TasksList tasks={tasks} onTaskDone={removeTask} onTaskToggle={toggleTask} />
 
                 <TasksSummary tasks={tasks} />
-            </fieldset>
+            </div>
         </>
     )
 }
