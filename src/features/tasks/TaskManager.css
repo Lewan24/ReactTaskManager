@@ -1,0 +1,173 @@
+.text-start{
+    text-align: start;
+}
+
+.text-taskInWork{
+    color: rgb(255, 85, 0);
+}
+
+.text-taskDone{
+    color: rgb(128, 255, 0);
+}
+
+.tasksCard{
+    box-shadow: white 0px 2px 5px;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 50vw;
+}
+
+.tasksList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+textarea{
+    min-width: 70%;
+    max-width: 70%;
+
+    min-height: 50px;
+    max-height: 100px;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardPadding{
+    padding: 10px;
+}
+
+.mr-2{
+    margin-right: 10px;
+}
+
+.mb-2{
+    margin-bottom: 10px;
+}
+
+.mt-2{
+  margin-top: 10px;
+}
+
+.flexSpaceBetween{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskItem{
+    box-shadow: white 2px 3px 3px;
+}
+
+.tasksFilterMain{
+  display: flex;
+  justify-content: center;
+}
+
+.tasksFilterInner{
+  box-shadow: red 1px 1px 3px;
+  width: fit-content;
+  padding: 10px;
+}
+
+.btn {
+  position: relative;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 250ms;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 6px;
+}
+
+.btn-classic {
+  background-color: #ffffff;
+  color: #242424;
+  border-radius: 0.5rem;
+  box-shadow: 
+    inset 0 1px 0 0 #ffffff,
+    0 1px 0 0 #eeeded,
+    0 2px 0 0 #cfcfcf,
+    0 4px 0 0 #aaa9a9,
+    0 5px 0 0 #747474,
+    0 6px 0 0 #717171,
+    0 7px 0 0 #4d4d4d,
+    0 7px 8px 0 #252525;
+}
+
+.btn-classic:hover {
+  transform: translateY(4px);
+}
+
+.btn-edit {
+  background-color: #ffb81f;
+  color: #242424;
+  border-radius: 0.5rem;
+  box-shadow: 
+    inset 0 1px 0 0 #ffb81f,
+    0 1px 0 0 #f9b41e,
+    0 2px 0 0 #e8a71d,
+    0 4px 0 0 #e8a71d,
+    0 5px 0 0 #da9d1b,
+    0 6px 0 0 #d3981a,
+    0 7px 0 0 #ce951a,
+    0 7px 8px 0 #b68316;
+}
+
+.btn-edit:hover {
+  transform: translateY(4px);
+}
+
+.btn-error {
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 
+    inset 0 1px 0 0 #ff0000,
+    0 1px 0 0 #e20000,
+    0 2px 0 0 #b20000,
+    0 4px 0 0 #900000,
+    0 5px 0 0 #610000,
+    0 6px 0 0 #4c0000,
+    0 7px 0 0 #270000,
+    0 7px 8px 0 #0b0000;
+}
+
+.btn-error:hover {
+  transform: translateY(4px);
+}
+
+.btn-success {
+  background-color: #62ff00;
+  color: #000000;
+  border-radius: 0.5rem;
+  box-shadow: 
+    inset 0 1px 0 0 #62ff00,
+    0 1px 0 0 #58e700,
+    0 2px 0 0 #50d001,
+    0 4px 0 0 #46b401,
+    0 5px 0 0 #3a9600,
+    0 6px 0 0 #338600,
+    0 7px 0 0 #2b7000,
+    0 7px 8px 0 #173d00;
+}
+
+.btn-success:hover {
+  transform: translateY(4px);
+}
