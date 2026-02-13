@@ -19,9 +19,11 @@ function TaskManager(){
         setTasks(prev => prev.map(t => t.id === id ? {...t, completed: !t.completed} : t))
     }, [])
 
-    // TODO: Inline (or by any other method) tasks editing
+    const changeTaskTitle = useCallback((id: string, newTitle: string) => {
+        setTasks(prev => prev.map(t => t.id === id ? {...t, title: newTitle} : t))
+    }, [])
+
     // TODO: Save to local storage and load from local storage
-    // TODO: Change css to something prettier like bootstrap or tailwind and change design of app
 
     return(
         <>
@@ -30,7 +32,7 @@ function TaskManager(){
 
                 <TasksCreateForm onTaskCreate={createTask} />
 
-                <TasksList tasks={tasks} onTaskDone={removeTask} onTaskToggle={toggleTask} />
+                <TasksList tasks={tasks} onTaskDone={removeTask} onTaskToggle={toggleTask} onTaskEditSave={changeTaskTitle} />
 
                 <TasksSummary tasks={tasks} />
             </div>

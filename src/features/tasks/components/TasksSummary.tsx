@@ -9,7 +9,7 @@ function TasksSummary({tasks} : TasksSummaryProps){
 
     return (
         <>
-        <p className="text-end text-xl mt-10">Active tasks: {activeTasks}</p>
+        <p className="text-end text-xl mt-10">Active tasks: <span className="text-green-400">{activeTasks}</span></p>
         </>
     )
 }

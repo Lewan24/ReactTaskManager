@@ -9,9 +9,10 @@ type TasksListProp = {
 
     onTaskDone: (id: string) => void
     onTaskToggle: (id: string) => void
+    onTaskEditSave: (id: string, newTitle: string) => void
 }
 
-function TasksList({tasks, onTaskDone, onTaskToggle} : TasksListProp){
+function TasksList({tasks, onTaskDone, onTaskToggle, onTaskEditSave} : TasksListProp){
     const [filter, setFilter] = useState<ETasksFilter>(ETasksFilter.All)
     const tasksList = getFilteredTasksList()
 
@@ -32,7 +33,7 @@ function TasksList({tasks, onTaskDone, onTaskToggle} : TasksListProp){
                 break;
         }
 
-        return filteredTasks.map(task => <TaskItem key={task.id} task={task} onTaskDone={onTaskDone} onTaskToggle={onTaskToggle} />)
+        return filteredTasks.map(task => <TaskItem key={task.id} task={task} onTaskDone={onTaskDone} onTaskToggle={onTaskToggle} onTaskEditSave={onTaskEditSave} />)
     }
 
     return (
@@ -42,7 +43,7 @@ function TasksList({tasks, onTaskDone, onTaskToggle} : TasksListProp){
 
             <TasksFormFilters currentFilter={filter} onFilterChange={setFilter} />
 
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+            <div className="mt-10 flex flex-wrap gap-4 grid grid-cols-2 grid-flow-row-dense">
                 {tasksList}
             </div>
         </div>

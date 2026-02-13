@@ -1,4 +1,4 @@
-import { useCallback } from "react"
+import React from "react"
 import { ETasksFilter } from "../data/ETasksFilter"
 
 type TasksFormFiltersProps = {
@@ -7,10 +7,11 @@ type TasksFormFiltersProps = {
     onFilterChange: (filter: ETasksFilter) => void
 }
 
-function TasksFormFilters({currentFilter, onFilterChange} : TasksFormFiltersProps){
+const TasksFormFilters = React.memo(function TasksFormFilters({currentFilter, onFilterChange} : TasksFormFiltersProps){
     function getFilterBtnClassDependingOnFilter(filter: ETasksFilter) : string{
         const isActiveFilter = currentFilter === filter
-        return isActiveFilter ? "btn btn-selected" : "btn"
+        let defaultClasses = "btn cursor-pointer"
+        return isActiveFilter ? defaultClasses + " btn-selected" : defaultClasses
     }
 
     return (
@@ -18,13 +19,13 @@ function TasksFormFilters({currentFilter, onFilterChange} : TasksFormFiltersProp
         <div className="border p-2">
             <h1 className="text-center text-xl">Filter</h1>
             <div className="flex flex-row gap-4 justify-center">
-                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.All)} onClick={() => onFilterChange(ETasksFilter.All)}>All tasks</button>
-                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.Done)} onClick={() => onFilterChange(ETasksFilter.Done)}>Only done</button>
-                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.Active)} onClick={() => onFilterChange(ETasksFilter.Active)}>Only in work</button>
+                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.All)} onClick={() => onFilterChange(ETasksFilter.All)}>All</button>
+                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.Done)} onClick={() => onFilterChange(ETasksFilter.Done)}>Done</button>
+                <button className={getFilterBtnClassDependingOnFilter(ETasksFilter.Active)} onClick={() => onFilterChange(ETasksFilter.Active)}>WIP</button>
             </div>
         </div>
         </>
     )
-}
+})
 
 export default TasksFormFilters
